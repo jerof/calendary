@@ -26,7 +26,9 @@ function Navbar() {
   return (
     <div className="p-6 border-b flex items-center justify-between px-10">
       <div>
-        <Image src="/logo.svg" alt="logo" width={40} height={40} />
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="logo" width={40} height={40} />
+        </Link>
       </div>
       <div>
         <ul className="hidden md:flex md:gap-x-12">
