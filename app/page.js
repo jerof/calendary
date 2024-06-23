@@ -1,5 +1,23 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Navbar from "./_components/Navbar";
+import Hero from "./_components/Hero";
 
 export default function Home() {
-  return <div className="text-red-500">Hi</div>;
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+    </div>
+  );
 }
+
+// This will be the landing page
+
+// User can see the navbar
+// Create navbar component
+
+// User can see login, get started button
+// Kinde Authentication
+
+// user can see hero title, p, sign up buttons, image
+// Build page
