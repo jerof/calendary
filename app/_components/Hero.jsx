@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 
-function Hero() {
+function Hero({ LoginLink }) {
   return (
     <div className="grid grid-cols-2 mt-10">
       <div className="flex flex-col pl-24 pr-4 space-y-10 mt-10">
@@ -12,7 +12,9 @@ function Hero() {
           back-and-forth emails to find the perfect time — and so much more.
         </p>
         <div>
-          <Button className="px-10 py-6 text-lg">Sign up with Google</Button>
+          <Button className="px-10 py-6 text-lg">
+            <LoginLink>Sign up with Google</LoginLink>
+          </Button>
         </div>
       </div>
       <div className="flex justify-center items-center pr-10">

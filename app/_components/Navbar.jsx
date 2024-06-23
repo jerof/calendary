@@ -1,9 +1,14 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
-function Navbar() {
+function Navbar({ LoginLink }) {
   const menu = [
     {
       itemName: "Product",
@@ -40,8 +45,12 @@ function Navbar() {
         </ul>
       </div>
       <div className="flex gap-x-2">
-        <Button variant="ghost">Log In</Button>
-        <Button>Get Started</Button>
+        <Button variant="ghost">
+          <LoginLink>Log In</LoginLink>
+        </Button>
+        <Button>
+          <RegisterLink>Get Started</RegisterLink>
+        </Button>
       </div>
     </div>
   );
