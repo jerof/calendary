@@ -47,7 +47,8 @@ function SideNav({ params }) {
       />
       <div className="w-full my-4">
         <Button className="w-full flex items-center justify-center px-4 py-2 rounded-full gap-x-2 hover:scale-105 transition-all duration-200">
-          <Plus /> Create
+          <Plus />
+          <Link href={"/create-event"}>Create</Link>
         </Button>
       </div>
       <div className="flex flex-col gap-y-2 w-full mt-8">
