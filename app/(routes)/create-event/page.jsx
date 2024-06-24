@@ -1,10 +1,17 @@
-import React from "react";
-import MeetingForm from "./_components/MeetingForm";
+"use client";
+import React, { useEffect, useState } from "react";
+import EventForm from "./_components/EventForm";
 
 function CreateEvent() {
+  const [formValues, setFormValues] = useState();
+
+  /* useEffect(() => {
+    console.log("Form Values: ", formValues);
+  }, [formValues]); */
+
   return (
     <div className="flex">
-      <MeetingForm />
+      <EventForm setFormValues={setFormValues} />
     </div>
   );
 }

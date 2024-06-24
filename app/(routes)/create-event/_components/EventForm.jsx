@@ -15,22 +15,33 @@ import LocationOptions from "@/app/_utils/LocationOptions";
 import Image from "next/image";
 import ThemeOptions from "@/app/_utils/ThemeOptions";
 
-function MeetingForm() {
+function MeetingForm({ setFormValues }) {
   const [eventName, setEventName] = useState("");
   const [duration, setDuration] = useState(30);
   const [locationType, setLocationType] = useState("");
+  const [locationUrl, setLocationUrl] = useState("");
   const [themeColor, setThemeColor] = useState("");
 
   useEffect(() => {
-    console.log("Event: ", eventName);
-    console.log("Duration: ", duration);
-    console.log("LocationType: ", locationType);
-    console.log("Theme Color: ", themeColor);
-  }, [eventName, duration, locationType, themeColor]);
+    setFormValues({
+      eventName: eventName,
+      duration: duration,
+      locationType: locationType,
+      locationUrl: locationUrl,
+      themeColor: themeColor,
+    });
+  }, [eventName, duration, locationType, locationUrl, themeColor]);
 
-  /* Logic for this method
-
-  -- Created
+  /* 
+      Fields to create in db
+      businessId
+      createdBy
+      duration
+      eventName
+      id: createdAt timestamp
+      locationType
+      locationUrl
+      themeColor
 
    */
 
@@ -91,6 +102,7 @@ function MeetingForm() {
                 className="flex flex-col justify-center border rounded-md py-2 px-4 md:items-center lg:w-1/4 hover:bg-slate-100 hover:cursor-pointer hover:transition-all hover:duration-100"
                 key={index}
                 onClick={() => setLocationType(option.name)}
+                value={locationType}
               >
                 <Image
                   src={option.icon}
@@ -106,7 +118,12 @@ function MeetingForm() {
         {locationType && (
           <div className="my-4 flex gap-y-2 flex-col">
             <label> {locationType} link</label>
-            <Input placeholder="Add link here" className="w-full" />
+            <Input
+              placeholder="Add link here"
+              className="w-full"
+              onChange={(e) => setLocationUrl(e.target.value)}
+              value={locationUrl}
+            />
           </div>
         )}
         <div className="my-4 flex gap-y-2 flex-col">
