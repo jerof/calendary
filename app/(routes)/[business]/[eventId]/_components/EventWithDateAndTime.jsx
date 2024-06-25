@@ -2,7 +2,12 @@ import { format } from "date-fns";
 import { CalendarCheck, Clock, MapPin, Timer } from "lucide-react";
 import React from "react";
 
-function EventWithDateAndTime({ params, eventInfo, selectedDate }) {
+function EventWithDateAndTime({
+  params,
+  eventInfo,
+  selectedDate,
+  selectedTime,
+}) {
   return (
     <div className="flex flex-col w-1/3 gap-y-3">
       <p>{params?.business}</p>
@@ -17,7 +22,7 @@ function EventWithDateAndTime({ params, eventInfo, selectedDate }) {
         <CalendarCheck /> {format(selectedDate, "PPP").toString()}
       </div>
       <div className="flex gap-x-2">
-        <Timer /> 4:15 PM
+        <Timer /> {selectedTime}
       </div>
     </div>
   );
