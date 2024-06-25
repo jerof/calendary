@@ -11,8 +11,8 @@ function SideNav({ params }) {
   const menu = [
     {
       id: 1,
-      name: "Event Type",
-      path: "/dashboard/event-type",
+      name: "Dashboard",
+      path: "/dashboard",
       icon: Briefcase,
     },
     {
