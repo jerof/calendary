@@ -62,7 +62,10 @@ function EventDetailsCard({ eventsList, deleteEventInDb }) {
     <>
       {eventsList.length > 0
         ? eventsList.map((event, index) => (
-            <div className="rounded-md border-t-8 border-blue-300 shadow-md p-4">
+            <div
+              className="rounded-md border-t-8 border-blue-300 shadow-md p-4"
+              style={{ borderTopColor: `${event?.themeColor}` }}
+            >
               <div className="flex flex-col">
                 <div className="flex justify-end">
                   <DropdownMenu>

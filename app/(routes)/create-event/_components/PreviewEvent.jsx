@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-import { formatDate } from "date-fns";
 import { getFirestore } from "firebase/firestore";
 import { app } from "@/config/firebase";
 import { doc, getDoc } from "firebase/firestore";
