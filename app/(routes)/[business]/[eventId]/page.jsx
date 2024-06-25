@@ -42,7 +42,7 @@ function EventPage({ params }) {
   useEffect(() => {
     user && getEventInfoFromDb();
     user && getBusinessInfoFromDb();
-  }, [user]);
+  }, [user, businessInfo]);
 
   useEffect(() => {
     if (
@@ -79,6 +79,7 @@ function EventPage({ params }) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
+      console.log("BusinessInfo: ", docSnap.data());
       setBusinessInfo(docSnap.data());
     } else {
       console.log("No such document!");
@@ -110,9 +111,11 @@ function EventPage({ params }) {
     const id = Date.now().toString();
     await setDoc(doc(db, "ScheduledEvents", id), {
       id: id,
-      businessName: params.business,
+      businessName: businessInfo?.businessName,
+      businessEmail: businessInfo?.email,
       duration: eventInfo?.duration,
       eventId: eventInfo?.id,
+      eventName: eventInfo?.eventName,
       locationType: eventInfo?.locationType,
       locationUrl: eventInfo?.locationUrl,
       selectedDate: format(selectedDate, "yyyy-MM-dd"), // Ensure correct format
