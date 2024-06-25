@@ -53,9 +53,8 @@ function SideNav({ params }) {
       </div>
       <div className="flex flex-col gap-y-2 w-full mt-8">
         {menu.map((item, index) => (
-          <Link href={item.path}>
+          <Link href={item.path} key={index}>
             <Button
-              key={index}
               variant="ghost"
               className={`flex items-center w-full gap-x-3 justify-start px-4 py-6 hover:bg-slate-200 hover:scale-105 transition-all duration-200 ${
                 pathname === item.path &&
